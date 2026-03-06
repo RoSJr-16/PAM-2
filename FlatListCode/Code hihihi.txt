@@ -1,0 +1,20 @@
+const Item = ({nome, valor, dtCadastro, qntd}) => (
+  <View style={styles.item}>
+    <Text style={styles.nome}>{nome}</Text>
+    <Text style={styles.nome }>{valor}</Text>
+    <Text style={styles.nome}>{dtCadastro}</Text>
+    <Text style={styles.nome}>{qntd}</Text>
+  </View>
+);
+
+export default function App(){  
+return(
+  <View style={styles.container}>
+    <FlatList
+      data={DATA}
+      renderItem={({item}) => <Item nome={item.nome} valor={item.valor} dtCadastro={item.dtCadastro} qntd={item.qntd}/>}
+      keyExtractor={item => item.id}
+    />
+  </View>
+  )  
+};
